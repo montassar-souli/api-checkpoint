@@ -1,6 +1,6 @@
-const UserList = () => {
+const UserList = ({ listOfUSer }) => {
   return (
-    <div className="rounded-md shadow-md w-64 justify-center items-center mx-auto">
+    <div className="rounded-md shadow-md w-64 justify-center items-center flex">
       <div className="">
         <img
           className="h-44 mx-auto"
@@ -9,11 +9,11 @@ const UserList = () => {
         />
         <div className="items-center">
           <img />
-          <h5 className="items-center">{/*name*/}</h5>
+          <h5 className="items-center">{listOfUSer.name}</h5>
         </div>
         <div className="flex items-center">
-          <img className="h-4" src="images/envelope-icon.svg" alt="" />
-          <h1>email: </h1>
+          <img className="h-4" src="images/envelope-icon.svg" alt="img-mail" />
+          <h1>{listOfUSer.email}</h1>
         </div>
         <div className="flex items-center">
           <img
@@ -21,30 +21,29 @@ const UserList = () => {
             src="images/maps-pin-black-icon.svg"
             alt="location-img"
           />
-          <h1>address: </h1>
-          <p>street: </p>
-          <p>suite: </p>
-          <p>city: </p>
-          <p>zipcode: </p>
+          <p>{listOfUSer.address.street}</p>
+          <p>{listOfUSer.address.suite}</p>
+          <p>{listOfUSer.address.city}</p>
+          <p>{listOfUSer.address.zipcode}</p>
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           <img className="h-4" src="images/phone-icon.svg" alt="phone-img" />
-          <h1>phone:</h1>
+          <h1>{listOfUSer.phone}</h1>
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           <img
             className="h-4"
             src="images/globe-network-icon.svg"
             alt="globe-img"
           />
-          <h1>website: </h1>
-          <div>
-            <img className="flex" src="" alt="" />
-            <h1>company: </h1>
-          </div>
+          <h1>{listOfUSer.website}</h1>
+        </div>
+        <div className="flex items-center">
+          <img className="flex" src="" alt="" />
+          <h1>{listOfUSer.company.name}</h1>
         </div>
         <div>
-          <p>bs:</p>
+          <p>{listOfUSer.company.bs}</p>
         </div>
       </div>
     </div>
